@@ -1,0 +1,58 @@
+body {
+  background-color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.description {
+  text-align: center;
+}
+
+#innerContainer,
+#container,
+#board {
+  width: 400px;
+}
+
+#innerContainer {
+  padding-top: 10px;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px 0px;
+  text-align: center;
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#board {
+  font-size: 32px;
+  height: 400px;
+  padding: 0px;
+  position: relative;
+  color: white;
+}
+
+.piece {
+  background-image: url(background.jpg);
+  color: white;
+  border: 2px solid black;
+  height: 96px;
+  line-height: 96px;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  width: 96px;
+}
+
+#w3c {
+  text-align: right;
+}
+
+#w3c img {
+  border: none;
+}
