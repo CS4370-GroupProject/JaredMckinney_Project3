@@ -92,12 +92,7 @@ window.onload = function(){
     }
     runPad();
         
-    function stopTimer () {
-        
-         $('myTimer').innerHTML= "  Timer:  <span id='minutes'>00</span>:<span id='seconds'>00</span>";
-         resetPad();
     
-        }
     
     
   
@@ -255,7 +250,7 @@ window.onload = function(){
  
     function shuffleIt(){
     
-    stopTimer();
+    
     
     counter =0;  
     $('myCounter').innerHTML= "Counter: " + counter.toString(); 
