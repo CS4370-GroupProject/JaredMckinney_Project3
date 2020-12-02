@@ -23,6 +23,18 @@ window.onload = function () {
   $('myCounter').style.border = "thin dotted black";
   $('myCounter').innerHTML = "Counter: "
   $('myCounter').innerHTML = "Counter: " + counter.toString();
+  
+ 
+    var ti = document.createElement('div');
+    ti.id = 'myTimer';
+    $('overall').appendChild(ti);
+    $('myTimer').style.height = "20px";
+    $('myTimer').style.background = "rgba(176,196,222,0.6)";
+    $('myTimer').style.marginTop = "5px";
+    $('myTimer').style.padding = "5px";
+    $('myTimer').style.border = "thin dotted black";
+    $('myTimer').innerHTML= "Counter: "
+    $('myTimer').innerHTML= " Timer:  <span id='minutes'>00</span>:<span id='seconds'>00</span>";
 
 
   var sl = document.createElement('select');
@@ -60,6 +72,43 @@ window.onload = function () {
 
 
 }
+
+
+    var sec = 0,
+      timeoutHandler;
+
+    function pad(val) {
+    return val > 9 ? val : "0" + val;
+    }
+
+    function pausePad() {
+    clearTimeout( timeoutHandler );
+    }
+
+    function resumePad() {
+    pausePad();
+    runPad();
+    }
+
+    function resetPad() {
+    sec = 0;
+    resumePad();
+    }
+
+    function runPad() {
+    timeoutHandler = setInterval(function() {
+        document.getElementById("seconds").innerHTML = pad(++sec % 60);
+        document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
+    }, 1000);
+    }
+    runPad();
+        
+    function stopTimer () {
+        
+         $('myTimer').innerHTML= "  Timer:  <span id='minutes'>00</span>:<span id='seconds'>00</span>";
+         resetPad();
+    
+        }
 
 
 
@@ -235,7 +284,7 @@ function blink(selector) {
 
 function shuffleIt() {
 
-
+    stopTimer();
 
   counter = 0;
   $('myCounter').innerHTML = "Counter: " + counter.toString();
